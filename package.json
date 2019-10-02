@@ -1,0 +1,25 @@
+{
+  "name": "rpce-interval-reloader",
+  "description": "Use with rollup-plugin-chrome-extension to reload your extension during development.",
+  "main": "dist/index-cjs.js",
+  "module": "dist/index-esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "jest",
+    "preversion": "npm run build",
+    "postversion": "git push && npm publish"
+  },
+  "devDependencies": {
+    "rollup": "^1.22.0",
+    "rollup-plugin-bundle-imports": "^1.4.5",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@sucrase/jest-plugin": "^2.0.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0"
+  }
+}
